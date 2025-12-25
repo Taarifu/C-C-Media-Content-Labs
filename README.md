@@ -1,53 +1,112 @@
-# Welcome to your Lovable project
+# TM Media Content Labs Agency
 
-## Project info
+A Next.js application with a neobrutalist design system celebrating African creativity.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Project Structure
 
-## How can I edit this code?
+This project has been migrated to **Next.js 16** using the App Router pattern.
 
-There are several ways of editing your application.
+```
+/
+├── frontend/              # Next.js application
+│   ├── app/              # App Router pages and layouts
+│   ├── components/       # React components
+│   │   ├── ui/          # shadcn/ui components
+│   │   └── ...          # Custom components
+│   ├── hooks/           # Custom React hooks
+│   ├── lib/             # Utility functions
+│   ├── public/          # Static assets
+│   └── ...              # Config files
+├── public/              # Legacy public folder (can be merged)
+└── README.md            # This file
+```
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Framework**: Next.js 16.1 (App Router)
+- **Styling**: Tailwind CSS v3 with custom neobrutalist theme
+- **UI Components**: shadcn/ui (Radix UI primitives)
+- **Animations**: Framer Motion
+- **State Management**: TanStack Query (React Query)
+- **Forms**: React Hook Form + Zod
+- **Fonts**: Archivo Black (display), Fraunces (serif)
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+### Prerequisites
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Node.js 18+ & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Navigate to the frontend directory
+cd frontend
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Install dependencies (if not already installed)
+npm install --legacy-peer-deps
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:3000`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build for Production
 
-**Use GitHub Codespaces**
+```sh
+cd frontend
+npm run build
+npm start
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
+## Design System
+
+This project uses a custom **neobrutalist** design system featuring:
+
+- **Color Palette**: 
+  - Paper White (`#F4F4F1`) / Ink Black (`#1A1A1A`)
+  - Matatu Chrome (Electric Teal) - Primary
+  - Savannah Sun (Deep Ochre) - Secondary  
+  - Maasai Red - Accent
+
+- **Typography**:
+  - Display: Archivo Black (bold, uppercase headers)
+  - Body: Fraunces (elegant serif for readability)
+
+- **Visual Elements**:
+  - Bold 3-5px borders
+  - Offset shadows (6x6px brutal shadows)
+  - Zero border radius (sharp corners)
+  - Grainy texture overlay
+
+## Key Components
+
+- `NewsTicker` - Animated news ticker
+- `HeroSection` - Hero banner with animations
+- `MemeBentoGrid` - Bento grid layout for memes
+- `EditorialSection` - Article cards
+- `ConstitutionSection` - Constitution highlights
+- `AgencyPortal` - Contact/footer section
+
+## Next.js Best Practices Applied
+
+✅ **Server Components by Default** - Most components render on the server for better performance
+✅ **Client Components** - Used only where needed (animations, interactions)
+✅ **App Router** - Modern routing with layouts and nested routes
+✅ **Image Optimization** - Next.js Image component ready
+✅ **Font Optimization** - Google Fonts loaded via next/font
+✅ **Path Aliases** - `@/*` imports for cleaner code
+✅ **TypeScript** - Full type safety
+
+## Deployment
+
+This project is ready to deploy to Vercel, Netlify, or any Next.js-compatible hosting platform.
+
+```sh
+cd frontend
+npm run build
+```
 - Edit files directly within the Codespace and commit and push your changes once you're done.
 
 ## What technologies are used for this project?
