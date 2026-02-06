@@ -1,4 +1,4 @@
-# TM Media Content Labs Agency
+# C&C Media Content Labs 
 
 A Next.js application with a neobrutalist design system celebrating African creativity.
 
