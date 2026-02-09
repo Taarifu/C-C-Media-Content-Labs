@@ -246,7 +246,7 @@ const AgencyPortal = () => {
               ))}
             </div>
             <p className="font-serif text-sm text-background/50">
-              © 2024 Cultura Creative Studio. Made with ❤️ in Nairobi.
+              © {new Date().getFullYear()} Cultura Creative Studio. Made with ❤️ in Nairobi.
             </p>
           </div>
         </motion.div>

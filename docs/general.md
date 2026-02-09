@@ -1,0 +1,10 @@
+Sections/pages to consider: 
+1. Landing Page. Explore the culture, read the manifesto CTA. 
+2. Meme Bento Section: Showcasing differently styles Bento boxes each with its own meme & vibe, this page leads to a meme gallery. 
+3. Deep Technical section: Dive into tech, culture, design, history and more indepth topics. This should lead to a page with the whole article and related media going indepth into a particular topic.   
+4. Constitution Section: Highlighting key articles of the constitution with interactive elements and visuals. 
+5. Agency Portal: Contact form, newsletter signup, and links to social media.
+6. Editorial Section: Featuring opinion pieces, interviews, and guest contributions on various topics related to the culture and movement. Shall be alongisde the deep technical section but more focused on opinion pieces and interviews. 
+7. News Ticker: A dynamic news ticker that scrolls the latest news, updates, and events related to the culture and movement. This can be a persistent element across all pages to keep visitors informed and engaged. 
+8.  Work with us page: A dedicated page showcasing the agency's services, portfolio, and contact information for potential clients. This can include case studies, testimonials, and a clear call-to-action for inquiries. Does: not need to be a separate page but can be a section within the agency portal.Digital marketing, content creation, Brand Strategy, Web Design, SEO, graphic design, Corporate identity, etc.
+These are the pages that the website should have. The landing page should be the main entry point, with clear navigation to the other sections. Each section should have its own unique design and content, while still maintaining a cohesive overall aesthetic that reflects the culture and movement. The news ticker should be a persistent element across all pages to keep visitors informed and engaged with the latest updates and events.

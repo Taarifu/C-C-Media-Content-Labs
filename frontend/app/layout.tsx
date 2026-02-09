@@ -20,7 +20,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "TM Media Content Labs Agency",
+  title: "C&C Media Content Labs Agency",
   description: "We build digital experiences that celebrate African creativity. From brand identities to full-stack platforms.",
 };
 
