@@ -17,7 +17,7 @@ const HeroSection = () => {
               Issue No. 001
             </span>
             <span className="font-serif text-muted-foreground">
-              December 2024 — Nairobi, Kenya
+              December 2026 — Nairobi, Kenya
             </span>
           </div>
 
@@ -38,7 +38,7 @@ const HeroSection = () => {
             className="mt-8 max-w-2xl"
           >
             <p className="text-xl leading-relaxed text-foreground md:text-2xl">
-              Where <span className="font-bold text-secondary">Matatu Chrome</span> meets digital innovation.
+              Where <span className="font-bold text-secondary">African ingenuity</span> meets digital innovation.
               A celebration of creativity, culture, and civic consciousness
               from the heart of East Africa.
             </p>

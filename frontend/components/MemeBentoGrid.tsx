@@ -1,71 +1,57 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const memes = [
   {
     id: 1,
-    title: "When the WiFi hits different in Westlands",
-    category: "Tech Life",
+    title: "Street Culture Chronicles",
+    category: "Daily Dose",
     size: "large",
-    color: "bg-primary",
-    emoji: "📶",
+    image: "/memes/G_-FzeAbEAYxFbl.jpg",
   },
   {
     id: 2,
-    title: "Matatu conductor doing mental math",
-    category: "Daily Hustle",
-    size: "small",
-    color: "bg-secondary",
-    emoji: "🧮",
+    title: "The Vibe Check",
+    category: "Mood Board",
+    size: "medium",
+    image: "/memes/G_7wjlyXMAIxLIB.jpg",
   },
   {
     id: 3,
-    title: "Gen Z discovering ugali slaps",
-    category: "Food Wars",
+    title: "Real Talk",
+    category: "Hot Takes",
     size: "small",
-    color: "bg-accent",
-    emoji: "🍽️",
+    image: "/memes/HAAGkHJXsAEjg84.jpg",
   },
   {
     id: 4,
-    title: "Nairobi traffic giving meditation time",
-    category: "Commuter Tales",
-    size: "medium",
-    color: "bg-primary",
-    emoji: "🚗",
+    title: "Internet Gold",
+    category: "Viral Moments",
+    size: "small",
+    image: "/memes/2997jtrjb8ig1.png",
   },
   {
     id: 5,
-    title: "When mom calls you by your full name",
-    category: "Family Life",
-    size: "small",
-    color: "bg-secondary",
-    emoji: "😱",
+    title: "That's The Energy",
+    category: "Mood",
+    size: "large",
+    image: "/memes/8ba6x29yccig1.png",
   },
   {
     id: 6,
-    title: "M-Pesa transaction went through",
-    category: "Money Moves",
+    title: "Peak Content",
+    category: "Fresh Takes",
     size: "medium",
-    color: "bg-accent",
-    emoji: "💸",
+    image: "/memes/vk85jl3x7pig1.jpeg",
   },
   {
     id: 7,
-    title: "Friday vibes in Kilimani",
-    category: "Weekend Mode",
-    size: "large",
-    color: "bg-secondary",
-    emoji: "🎉",
-  },
-  {
-    id: 8,
-    title: "Safari ants vs. bare feet",
-    category: "Nature Wars",
+    title: "No Cap",
+    category: "Real Ones",
     size: "small",
-    color: "bg-primary",
-    emoji: "🐜",
+    image: "/memes/vpv5q0fqldig1.jpeg",
   },
 ];
 
@@ -106,7 +92,8 @@ const MemeBentoGrid = () => {
             THE MEME BENTO
           </h2>
           <p className="mt-4 max-w-xl font-serif text-lg text-muted-foreground">
-            Fresh from the streets of Nairobi. The internet's finest, served daily.
+            Fresh from the streets of Nairobi. The internet's finest, served
+            daily.
           </p>
         </motion.div>
 
@@ -122,20 +109,37 @@ const MemeBentoGrid = () => {
             <motion.div
               key={meme.id}
               variants={item}
-              className={`meme-card ${meme.color} ${meme.size === "large"
+              className={`meme-card relative ${
+                meme.size === "large"
                   ? "sm:col-span-2 sm:row-span-2"
                   : meme.size === "medium"
                     ? "sm:row-span-2"
                     : ""
-                }`}
+              }`}
             >
-              <div className="flex h-full flex-col justify-between p-6">
-                <span className="font-display text-xs uppercase tracking-wider opacity-80">
+              {/* Meme Image */}
+              <Image
+                src={meme.image}
+                alt={meme.title}
+                fill
+                className="object-cover"
+                sizes={
+                  meme.size === "large"
+                    ? "(max-width: 640px) 100vw, 50vw"
+                    : "(max-width: 640px) 100vw, 25vw"
+                }
+              />
+
+              {/* Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+
+              {/* Text Content */}
+              <div className="relative flex h-full flex-col justify-between p-6">
+                <span className="brutal-card-sm w-fit bg-accent px-3 py-1 font-display text-xs uppercase tracking-wider text-background">
                   {meme.category}
                 </span>
                 <div>
-                  <span className="text-4xl md:text-5xl">{meme.emoji}</span>
-                  <h3 className="mt-3 font-display text-lg uppercase leading-tight md:text-xl">
+                  <h3 className="font-display text-lg uppercase leading-tight text-background md:text-xl">
                     {meme.title}
                   </h3>
                 </div>
@@ -152,9 +156,7 @@ const MemeBentoGrid = () => {
           transition={{ delay: 0.3 }}
           className="mt-10 text-center"
         >
-          <button className="brutal-button-accent">
-            Load More Memes
-          </button>
+          <button className="brutal-button-accent">Load More Memes</button>
         </motion.div>
       </div>
     </section>

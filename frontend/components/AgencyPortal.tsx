@@ -37,7 +37,7 @@ const AgencyPortal = () => {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-serif text-lg text-background/70">
             We build digital experiences that celebrate African creativity.
-            From brand identities to full-stack platforms.
+            From brand identities to spotlighting emerging platforms.
           </p>
         </motion.div>
 
@@ -55,7 +55,7 @@ const AgencyPortal = () => {
               {/* Card Header */}
               <div className="border-b-[3px] border-foreground pb-6">
                 <h3 className="font-display text-4xl uppercase md:text-5xl">
-                  CULTURA
+                  C&C
                 </h3>
                 <span className="font-display text-xl uppercase text-primary">
                   CREATIVE STUDIO
@@ -65,7 +65,7 @@ const AgencyPortal = () => {
               {/* Card Body */}
               <div className="mt-8 space-y-6">
                 <p className="font-serif text-lg italic">
-                  "Crafting digital experiences with African soul since 2024"
+                  Crafting digital experiences with African soul since 2026.
                 </p>
 
                 <div className="space-y-4">
