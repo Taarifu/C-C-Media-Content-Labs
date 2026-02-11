@@ -2,58 +2,15 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-
-const memes = [
-  {
-    id: 1,
-    title: "Street Culture Chronicles",
-    category: "Daily Dose",
-    size: "large",
-    image: "/memes/G_-FzeAbEAYxFbl.jpg",
-  },
-  {
-    id: 2,
-    title: "The Vibe Check",
-    category: "Mood Board",
-    size: "medium",
-    image: "/memes/G_7wjlyXMAIxLIB.jpg",
-  },
-  {
-    id: 3,
-    title: "Real Talk",
-    category: "Hot Takes",
-    size: "small",
-    image: "/memes/HAAGkHJXsAEjg84.jpg",
-  },
-  {
-    id: 4,
-    title: "Internet Gold",
-    category: "Viral Moments",
-    size: "small",
-    image: "/memes/2997jtrjb8ig1.png",
-  },
-  {
-    id: 5,
-    title: "That's The Energy",
-    category: "Mood",
-    size: "large",
-    image: "/memes/8ba6x29yccig1.png",
-  },
-  {
-    id: 6,
-    title: "Peak Content",
-    category: "Fresh Takes",
-    size: "medium",
-    image: "/memes/vk85jl3x7pig1.jpeg",
-  },
-  {
-    id: 7,
-    title: "No Cap",
-    category: "Real Ones",
-    size: "small",
-    image: "/memes/vpv5q0fqldig1.jpeg",
-  },
-];
+import { useState } from "react";
+import Link from "next/link";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { memes as allMemes, Meme } from "@/lib/memes";
 
 const container = {
   hidden: { opacity: 0 },
@@ -70,7 +27,16 @@ const item = {
   show: { opacity: 1, y: 0 },
 };
 
-const MemeBentoGrid = () => {
+const MemeBentoGrid = ({
+  limit,
+  showViewAll = true,
+}: {
+  limit?: number;
+  showViewAll?: boolean;
+}) => {
+  const [selectedMeme, setSelectedMeme] = useState<Meme | null>(null);
+  const memes = limit ? allMemes.slice(0, limit) : allMemes;
+
   return (
     <section className="border-b-[5px] border-foreground bg-muted py-16 md:py-24">
       <div className="container">
@@ -109,6 +75,7 @@ const MemeBentoGrid = () => {
             <motion.div
               key={meme.id}
               variants={item}
+              onClick={() => setSelectedMeme(meme)}
               className={`meme-card relative ${
                 meme.size === "large"
                   ? "sm:col-span-2 sm:row-span-2"
@@ -149,16 +116,58 @@ const MemeBentoGrid = () => {
         </motion.div>
 
         {/* View More */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3 }}
-          className="mt-10 text-center"
-        >
-          <button className="brutal-button-accent">Load More Memes</button>
-        </motion.div>
+        {showViewAll && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+            className="mt-10 text-center"
+          >
+            <Link href="/memes" className="brutal-button-accent inline-block">
+              {limit ? "View All Memes" : "Load More Memes"}
+            </Link>
+          </motion.div>
+        )}
       </div>
+
+      {/* Meme Preview Dialog */}
+      <Dialog open={!!selectedMeme} onOpenChange={() => setSelectedMeme(null)}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] sm:max-w-4xl p-0 overflow-hidden border-[3px] border-foreground">
+          {selectedMeme && (
+            <>
+              <DialogHeader className="p-4 sm:p-6 pb-0">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="brutal-card-sm bg-accent px-3 py-1 font-display text-xs uppercase tracking-wider text-background">
+                    {selectedMeme.category}
+                  </span>
+                  <DialogTitle className="font-display text-xl sm:text-2xl uppercase leading-tight">
+                    {selectedMeme.title}
+                  </DialogTitle>
+                </div>
+              </DialogHeader>
+              <div className="relative w-full aspect-square sm:aspect-video max-h-[70vh] bg-muted">
+                <Image
+                  src={selectedMeme.image}
+                  alt={selectedMeme.title}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 95vw, 896px"
+                  priority
+                />
+              </div>
+              <div className="p-4 sm:p-6 pt-0">
+                <button
+                  onClick={() => setSelectedMeme(null)}
+                  className="brutal-button-accent w-full sm:w-auto"
+                >
+                  Close Preview
+                </button>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

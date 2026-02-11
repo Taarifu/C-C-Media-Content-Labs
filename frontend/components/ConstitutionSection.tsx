@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Scale, Users, Shield, Heart, BookOpen, Landmark } from "lucide-react";
+import Link from "next/link";
 
 const articleOfDay = {
   number: "Article 27",
@@ -47,7 +48,8 @@ const ConstitutionSection = () => {
             THE CONSTITUTION
           </h2>
           <p className="mt-4 max-w-xl font-serif text-lg text-background/70">
-            Know your rights. Understand your power. The Katiba in plain language.
+            Know your rights. Understand your power. The Katiba in plain
+            language.
           </p>
         </motion.div>
 
@@ -158,9 +160,12 @@ const ConstitutionSection = () => {
               <p className="mt-2 font-serif text-sm opacity-80">
                 Read the complete Katiba 2010 with our annotated guide.
               </p>
-              <button className="brutal-button-outline mt-4 w-full border-accent-foreground text-sm text-accent-foreground hover:bg-accent-foreground hover:text-accent">
-                Read Now
-              </button>
+              <Link
+                href="/constitution"
+                className="brutal-button-outline mt-4 block w-full border-accent-foreground text-center text-sm text-accent-foreground hover:bg-accent-foreground hover:text-accent"
+              >
+                Explore Constitution
+              </Link>
             </div>
           </div>
         </motion.div>

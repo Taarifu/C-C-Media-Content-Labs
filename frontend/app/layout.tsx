@@ -5,6 +5,9 @@ import { Providers } from "@/components/providers";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import NewsTicker from "@/components/NewsTicker";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const archivoBlack = Archivo_Black({
   weight: "400",
@@ -21,7 +24,8 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: "C&C Media Content Labs Agency",
-  description: "We build digital experiences that celebrate African creativity. From brand identities to full-stack platforms.",
+  description:
+    "We build digital experiences that celebrate African creativity. From brand identities to full-stack platforms.",
 };
 
 export default function RootLayout({
@@ -36,7 +40,10 @@ export default function RootLayout({
       >
         <Providers>
           <TooltipProvider>
+            <NewsTicker />
+            <Navigation />
             {children}
+            <Footer />
             <Toaster />
             <Sonner />
           </TooltipProvider>

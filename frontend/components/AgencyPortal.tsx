@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, ArrowUpRight, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
 
 const AgencyPortal = () => {
@@ -19,7 +19,7 @@ const AgencyPortal = () => {
   };
 
   return (
-    <footer className="bg-foreground py-16 text-background md:py-24">
+    <section className="bg-foreground py-16 text-background md:py-24">
       <div className="container">
         {/* Header */}
         <motion.div
@@ -36,8 +36,8 @@ const AgencyPortal = () => {
             WORK WITH US
           </h2>
           <p className="mx-auto mt-4 max-w-2xl font-serif text-lg text-background/70">
-            We build digital experiences that celebrate African creativity.
-            From brand identities to spotlighting emerging platforms.
+            We build digital experiences that celebrate African creativity. From
+            brand identities to spotlighting emerging platforms.
           </p>
         </motion.div>
 
@@ -109,7 +109,7 @@ const AgencyPortal = () => {
 
               {/* Card Footer */}
               <div className="mt-8 flex flex-wrap gap-4 border-t-[3px] border-foreground pt-6">
-                {["Brand Design", "Web Dev", "Digital Strategy", "Content"].map(
+                {["Brand Design", "SEO", "Digital Strategy", "Content"].map(
                   (service) => (
                     <span
                       key={service}
@@ -117,7 +117,7 @@ const AgencyPortal = () => {
                     >
                       {service}
                     </span>
-                  )
+                  ),
                 )}
               </div>
             </div>
@@ -187,10 +187,13 @@ const AgencyPortal = () => {
                   >
                     <option value="">Select a project type</option>
                     <option value="brand">Brand Identity</option>
-                    <option value="web">Web Development</option>
-                    <option value="app">Mobile App</option>
+                    <option value="web">Web Content Writing</option>
+                    <option value="social">SEO Optimization</option>
                     <option value="strategy">Digital Strategy</option>
                     <option value="content">Content Creation</option>
+                    <option value="narrative management">
+                      Brand perception Management
+                    </option>
                   </select>
                 </div>
 
@@ -220,38 +223,8 @@ const AgencyPortal = () => {
             </form>
           </motion.div>
         </div>
-
-        {/* Footer Bottom */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="mt-16 border-t-[3px] border-background/20 pt-8"
-        >
-          <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-            <div className="font-display text-2xl uppercase">
-              CULTURA<span className="text-primary">.KE</span>
-            </div>
-            <div className="flex gap-6">
-              {["Twitter", "Instagram", "LinkedIn", "TikTok"].map((social) => (
-                <a
-                  key={social}
-                  href="#"
-                  className="group flex items-center gap-1 font-display text-sm uppercase text-background/70 transition-colors hover:text-primary"
-                >
-                  {social}
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
-                </a>
-              ))}
-            </div>
-            <p className="font-serif text-sm text-background/50">
-              © {new Date().getFullYear()} Cultura Creative Studio. Made with ❤️ in Nairobi.
-            </p>
-          </div>
-        </motion.div>
       </div>
-    </footer>
+    </section>
   );
 };
 
